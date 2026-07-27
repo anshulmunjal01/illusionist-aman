@@ -1,0 +1,6 @@
+{
+  "name": "Illusionist Aman",
+  "description": "Premium cinematic portfolio and interactive digital experience for Illusionist Aman, professional magician and mentalist.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cinzel", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom Color Tokens for Luxury Theme System */
+  --color-ivory: #F8F6F2;
+  --color-linen: #F3EFE8;
+  --color-cream-card: #FFFCF7;
+  --color-charcoal-dark: #111111;
+  --color-charcoal-primary: #1C1C1C;
+  --color-charcoal-secondary: #4B4B4B;
+  --color-charcoal-muted: #767676;
+  --color-champagne-gold: #C8A86B;
+  --color-bronze-gold: #A87B3B;
+  --color-warm-border: #E8E0D5;
+  --color-gold-hover-border: #D7C19C;
+}
+
+:root {
+  /* Explicit Light Theme Tokens */
+  --light-background: #F6F2EA;
+  --light-bg-alt: #EFE7DA;
+  --light-bg-section: #FBF8F3;
+  --light-card: #FFFFFF;
+  --light-glass: rgba(255, 255, 255, 0.72);
+  --light-heading-primary: #111111;
+  --light-heading-secondary: #1D1D1D;
+  --light-body: #2F2F2F;
+  --light-text-secondary: #555555;
+  --light-text-muted: #707070;
+  --light-accent-primary: #A77A2A;
+  --light-accent-secondary: #7F5A1F;
+  --light-border: #DDD4C7;
+  --light-divider: #E7DED0;
+  --light-icon: #222222;
+
+  --bg-primary: #F6F2EA;
+  --bg-secondary: #EFE7DA;
+  --bg-card: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.72);
+  
+  --text-primary: #111111;
+  --text-secondary: #1D1D1D;
+  --text-body: #2F2F2F;
+  --text-muted: #707070;
+  --heading: #111111;
+  --foreground: #111111;
+
+  --text-heading: #111111;
+  --text-small: #555555;
+
+  --accent-gold: #A77A2A;
+  --accent-gold-deep: #7F5A1F;
+  --border-linen: #DDD4C7;
+  --border-hover: #A77A2A;
+  --shadow-lux: 0 10px 30px -5px rgba(167, 122, 42, 0.08);
+}
+
+.dark {
+  /* Explicit Dark Theme Tokens */
+  --dark-background: #030305;
+  --dark-card: #0A0A10;
+  --dark-heading: #FFFFFF;
+  --dark-text: #F3F4F6;
+  --dark-border: rgba(255, 255, 255, 0.08);
+  --dark-accent: #F59E0B;
+
+  --bg-primary: #030305;
+  --bg-secondary: #08080E;
+  --bg-card: #0A0A10;
+  --bg-glass: rgba(10, 10, 16, 0.7);
+  --text-heading: #FFFFFF;
+  --text-primary: #F3F4F6;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+  --accent-gold: #F59E0B;
+  --accent-gold-deep: #D97706;
+  --border-linen: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(245, 158, 11, 0.4);
+  --shadow-lux: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@utility animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+@utility animate-shimmer {
+  background: linear-gradient(90deg, rgba(212,175,55,0) 0%, rgba(212,175,55,0.25) 50%, rgba(212,175,55,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@utility animate-float {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+@utility animate-glow {
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+/* Custom global overrides for smooth experience */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphic border shimmer class */
+.glass-border-shimmer {
+  position: relative;
+}
+
+.glass-border-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212,175,55,0.3) 0%, rgba(255,255,255,0.05) 50%, rgba(212,175,55,0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar for Luxury Experience */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #030305;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Magician Aman | Premier Illusionist",
+  "short_name": "Magician Aman",
+  "description": "Experience western-style stage magic, psychological mentalism, sleight of hand, and high-net-worth corporate galas worldwide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030305",
+  "theme_color": "#A77A2A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
